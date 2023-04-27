@@ -9,6 +9,42 @@
 
     <!-- Your interface markup goes here -->
     <!-- For interface examples, look in the `/examples/` directory in the root of your starter code repo. -->
+    <form id="userinput" class="">
+        <input type="radio" id="rps" name="game" value="rps">
+        <label for="rps">Play rock, paper, scissors?</label>
+
+        <br><br>
+        <input type="radio" id="rpsls" name="game" value="rpsls">
+        <label for="rpsls">Play rock, paper, scissors, lizard, Spock?</label>
+
+        <br><br>
+        <input type="checkbox" id="opponent" name="mode" value="opponent">
+        <label for="mode">Play against an opponent</label>
+
+        <br><br>
+        <input type="radio" id="rock" name="shot" value="rock" class="rps">
+        <label for="rock" class="rps">Rock</label>
+
+        <br><br>
+        <input type="radio" id="paper" name="shot" value="paper" class="rps">
+        <label for="paper" class="rps">Paper</label>
+
+        <br><br>
+        <input type="radio" id="scissors" name="shot" value="scissors" class="rps">
+        <label for="scissors" class="rps">Scissors</label>
+
+        <br><br>
+        <input type="radio" id="lizard" name="shot" value="lizard" class="rpsls hidden">
+        <label for="lizard" class="rpsls hidden">Lizard</label>
+
+        <br><br>
+        <input type="radio" id="spock" name="shot" value="spock" class="rpsls hidden">
+        <label for="spock" class="rpsls hidden">Spock</label>
+        
+        <br><br><br><br>
+        <input type="submit" id="play" name="controls" value="Play">
+        <input type="submit" id="reset" name="controls" value="Reset">
+    </form>
 
     </body>
 </html>
