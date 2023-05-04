@@ -4,14 +4,24 @@
 
 function showHideShots() {
     let check = document.getElementById('opponent');
+    let type = document.querySelector('input[name="game"]:checked').id;
     // let radiorps = document.getElementsByClassName('rps');
     // let radiorpsls = document.getElementsByClassName('rpsls');
 
-    if (check.checked == true) {
-        $('.shots').show()
-    } else {
-        $('.shots').hide()
-    }
+    // if (check.checked == true) {
+    //     $('.shots').show()
+    // } else {
+    //     $('.shots').hide()
+    // }
+    if (check.checked && type === 'rpsls') {
+        $('.shots').show();
+        $('.rpsls').show();
+      } else if (check.checked && type === 'rps') {
+        $('.shots.rps').show();
+        $('.rpsls').hide();
+      } else {
+        $('.shots').hide();
+      }
 }
 
 function startOver() {
