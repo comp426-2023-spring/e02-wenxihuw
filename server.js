@@ -19,7 +19,7 @@ if (args.debug) {
 // Did we call for help? 
 if (args.h || args.help) {
     console.log(`
-usage: node server.js --port=5000
+usage: node server.js --port=3000
 
 This package serves the static HTML, CSS, and JS files in a /public directory.
 It also creates logs in a common log format (CLF) so that you can better.
