@@ -19,7 +19,7 @@ function showHideShots() {
 
 function startOver() {
     document.getElementById('userinput').reset();
-    document.getElementById("results").hidden = true;
+    $('#results').hide();
     showHideShots();
 }
 
@@ -40,11 +40,11 @@ async function playGame() {
     let result = await response.json()
 
     if (isOpponent) {
+        $('#results').show();
         document.getElementById("results").innerText = 'You: ' + result.player + '\nYour opponent: ' + result.opponent + '\nResult: ' + result.result;
-        document.getElementById("results").hidden = false;
     } else {
+        $('#results').show();
         document.getElementById("results").innerText = result.player;
-        document.getElementById("results").hidden = false;
     }
     // console.log(url)
     // console.log(result)
