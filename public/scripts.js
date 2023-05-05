@@ -5,14 +5,7 @@
 function showHideShots() {
     let check = document.getElementById('opponent');
     let type = document.querySelector('input[name="game"]:checked').id;
-    // let radiorps = document.getElementsByClassName('rps');
-    // let radiorpsls = document.getElementsByClassName('rpsls');
 
-    // if (check.checked == true) {
-    //     $('.shots').show()
-    // } else {
-    //     $('.shots').hide()
-    // }
     if (check.checked && type === 'rpsls') {
         $('.shots').show();
         $('.rpsls').show();
@@ -32,17 +25,30 @@ function startOver() {
 async function playGame() {
 
     let game = $('input[type=radio][name=game]:checked').val();
+    let isOpponent = document.querySelector('#opponent').checked;
     let shot = $('input[type=radio][name=shot]:checked').val();
 
     let baseurl = window.location.href + 'app/'
-    console.log(baseurl)
+    let url = baseurl + game + '/play'
 
-    let url = baseurl + game + '/play/' + shot
-    console.log(url)
+    if (isOpponent) {
+        url += '/' + shot
+    }
 
     let response = await fetch(url)
     let result = await response.json()
-    console.log(result)
+
+    if (isOpponent) {
+        document.getElementById("results").innerText = 'You: ' + result.player + '\nYour opponent: ' + result.opponent + '\nResult: ' + result.result;
+        document.getElementById("results").hidden = false;
+    } else {
+        document.getElementById("results").innerText = result.player;
+        document.getElementById("results").hidden = false;
+    }
+    // console.log(url)
+    // console.log(result)
+    // console.log(result.result)
+
 }
 
 function viewrules() {
@@ -73,3 +79,4 @@ function hiderules() {
     document.getElementById("hide-rules-button").hidden = true;
     document.getElementById("rules-button").hidden = false;
 }
+
