@@ -53,8 +53,8 @@ async function playGame() {
         $('#results').show();
         document.getElementById("results").innerText = result.player;
     }
-    console.log(url)
-    console.log(result)
+    // console.log(url)
+    // console.log(result)
     // console.log(result.result)
 
 }
