@@ -19,6 +19,7 @@ function showHideShots() {
 
 function startOver() {
     document.getElementById('userinput').reset();
+    document.getElementById("results").hidden = true;
     showHideShots();
 }
 
